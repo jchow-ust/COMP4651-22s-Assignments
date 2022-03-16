@@ -21,7 +21,7 @@ Launch the [QuickStart VM][QuickStarts] using VirtualBox and allocate it at leas
 > 3. Run the docker container. Use the following command to run a container (you should replace $localdir with a directory in your MacOS, then this directory will be mounted to the `/host` directory in the container):
 > 
 > ```
-> docker run --hostname=quickstart.cloudera --privileged=true -t -i -p 8888:8888 -p 10000:10000 -p 10020:10020 -p 11000:11000 -p 18080:18080 -p 18081:18081 -p 18088:18088 -p 19888:19888 -p 21000:21000 -p 21050:21050 -p 2181:2181 -p 25000:25000 -p 25010:25010 -p 25020:25020 -p 50010:50010 -p 50030:50030 -p 50060:50060 -p 50070:50070 -p 50075:50075 -p 50090:50090 -p 60000:60000 -p 60010:60010 -p 60020:60020 -p 60030:60030 -p 7180:7180 -p 7183:7183 -p 7187:7187 -p 80:80 -p 8020:8020 -p 8032:8032 -p 802:8042 -p 8088:8088 -p 8983:8983 -p 9083:9083 -v $localdir:/host -m=8g qpswwww/quickstarts:v1 /etc/bootstrap.sh -bash
+> docker run --hostname=quickstart.cloudera --privileged=true -t -i -p 8888:8888 -p 10000:10000 -p 10020:10020 -p 11000:11000 -p 18080:18080 -p 18081:18081 -p 18088:18088 -p 19888:19888 -p 21000:21000 -p 21050:21050 -p 2181:2181 -p 25000:25000 -p 25010:25010 -p 25020:25020 -p 50010:50010 -p 50030:50030 -p 50060:50060 -p 50070:50070 -p 50075:50075 -p 50090:50090 -p 60000:60000 -p 60010:60010 -p 60020:60020 -p 60030:60030 -p 7180:7180 -p 7183:7183 -p 7187:7187 -p 80:80 -p 8020:8020 -p 8032:8032 -p 8042:8042 -p 8088:8088 -p 8983:8983 -p 9083:9083 -v $localdir:/host -m=8g qpswwww/quickstarts:v1 /etc/bootstrap.sh -bash
 > ```
 > 
 > 4. After the container starts, you should use source command to revise the environment variables:
@@ -29,18 +29,6 @@ Launch the [QuickStart VM][QuickStarts] using VirtualBox and allocate it at leas
 > source /etc/environment
 > ```
 > 5. you can use localhost:8088 to visit the webpage of Hadoop and view the status of nodes and submitted jobs. Now you can develop your project in $localdir of your Macbook.
-> 
-> 6. If you encounter this error when running Hadoop:
-> ```
-> put: Call From quickstart.cloudera/172.17.0.2 to quickstart.cloudera:8020 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
-> ```
-> 
-> Please use these commands to restart Hadoop services:
-> ```
-> [root@quickstart assignment-3]# sudo service hadoop-yarn-resourcemanager restart
-> [root@quickstart assignment-3]# sudo service hadoop-hdfs-namenode restart
-> [root@quickstart assignment-3]# sudo service hadoop-hdfs-datanode restart
-> ```
 
 This assignment repo is generated using [Apache Maven][Maven]. You'll find a `pom.xml` file in the root directory (which tells [Maven][Maven] how to build the code) and a source folder `src/`. Inside `src/`, there are two sub-directories, one for the main source code (`main/`) and another for the test code (`test/`). The test code is nothing but a place holder and will not be used in this assignment. The real code locates in the source folder, where you'll find the following Java class files: 
 
